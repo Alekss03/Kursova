@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>first site</title>
+  <title>BOSE</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
@@ -77,6 +77,33 @@
         function submitForm() {
             closeForm();
         }
+        // Елементи
+const overlay = document.getElementById('overlay');
+const closeButton = document.querySelector('.close-button');
+
+// Функція для відкриття форми
+function openForm() {
+  overlay.classList.add('active'); // Робимо форму видимою
+  document.body.classList.add('lock-scroll'); // Блокуємо скролінг сторінки
+}
+
+// Функція для закриття форми
+function closeForm() {
+  overlay.classList.remove('active'); // Ховаємо форму
+  document.body.classList.remove('lock-scroll'); // Розблоковуємо скролінг сторінки
+}
+
+// Додатково: закриття форми при кліку поза нею
+overlay.addEventListener('click', (e) => {
+  if (e.target === overlay) {
+    closeForm();
+  }
+});
+
+// Якщо у вас є кнопка для відкриття форми
+// document.getElementById('openFormButton').addEventListener('click', openForm);
+
+
     </script>
 
 
@@ -226,10 +253,47 @@
   </main>
 
   <footer class="footer">
-    <div class="footer_content">
-      <img src="./images/logo.png" alt="logo">
-    </div>
+    <section>
+      <div class="container">
+        <!-- Логотип і навігація -->
+        <div class="footer_section_logo">
+          <img src="images/logo.png" alt="BOSE">
+        </div>
+  
+        <!-- Контакти -->
+        <div class="footer-section contacts">
+          <h3>Контакти</h3>
+          <p>+380 50 628 1220</p>
+          <p><b>WhatsApp:</b> +380 50 628 1220</p>
+          <p><b>Адреса:</b> м. Луцьк, вул. 8-го Лютого</p>
+        </div>
+  
+        <!-- Соціальні мережі -->
+        <div class="footer-section social-media">
+          <h3>Нас можна знайти:</h3>
+          <div class="social-links">
+            <a href="https://www.facebook.com/Bose/" target="_blank" title="Facebook">
+              <img src="images/facebook.png" alt="Facebook">
+              Facebook: Bose
+            </a>
+            <a href="https://www.instagram.com/bose/" target="_blank" title="Instagram">
+              <img src="images/instagram.png" alt="Instagram">
+              Instagram: bose
+            </a>
+            <a href="https://www.tiktok.com/@bose" target="_blank" title="TikTok">
+              <img src="images/tiktok.png" alt="TikTok">
+              TikTok: @bose
+            </a>
+            <a href="https://x.com/bose" target="_blank" title="Twitter">
+              <img src="images/twitter.png" alt="Twitter">
+              Twitter: @bose
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
   </footer>
+  
   <script>
     let slideIndex = 1;
 showSlides(slideIndex);
